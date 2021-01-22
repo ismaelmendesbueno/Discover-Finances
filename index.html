@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dev.finance$</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">  
+</head>
+
+<body>
+    <header>
+        <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    </header>
+    <main class="container">
+
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
+
+            <div class="card">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="Image De Entradas">
+                </h3>
+                <p>R$ 5.000,00</p>
+            </div>
+
+            <div class="card negative">
+                <h3>
+                    <span>Saidas</span>
+                    <img src="./assets/expense.svg" alt="Image De Saidas">
+                </h3>
+                <p>R$ -850,00</p>
+            </div>
+
+            <div class="card total">
+                <h3>
+                    <span>Total</span>
+                    <img src="./assets/total.svg" alt="Image De Total">
+                </h3>
+                <p>R$ 4.150,00</p>
+            </div>
+        </section>
+        <section id="transaction">
+            <h2 class="sr-only">Transaçao</h2>
+            <a href="#"
+             onclick="Modal.open()"               
+             class="button new">+ Nova transaçao</a>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descriçao</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="description">Luz</td>
+                        <td class="expense">-R$ 500,00</td>
+                        <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover transaçao">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="description">Criaçao Website</td>
+                        <td class="income">-R$ 500,00</td>
+                        <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover transaçao">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="description">Internet</td>
+                        <td class="expense">-R$ 100,00</td>
+                        <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover transaçao">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="description">Games</td>
+                        <td class="expense">-R$ 250,00</td>
+                        <td class="date">27/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover transaçao">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova transaçao</h2>
+                <form action="">
+                     <div class="input-group">
+                         <label class="sr-only" for="description">Descriçao</label>
+                         <input type="text" 
+                                name="description" 
+                                id="description"
+                                placeholder="Descriçao"
+                         >
+                     </div>
+                     <div class="input-group">
+                        <label class="sr-only" for="amout">Valor</label>
+                        <input type="number" 
+                               step="0.01"
+                               name="amout" 
+                               id="amout"
+                               placeholder="0,00"
+                        />
+                        <small class="help">Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</small>
+                    </div>
+                    <form action="">
+                        <div class="input-group">
+                            <label class="sr-only" for="Data">Descriçao</label>
+                            <input type="date" 
+                                   name="Data" 
+                                   id="Data"
+                                   
+                            >
+                        </div>
+
+                        <div class="input-group actions">
+                            <a 
+                            href="#" 
+                            onclick="Modal.close()" 
+                            class="button cancel">Cancelar</a>
+                            <button>Salvar</button>
+                        </div>  
+                </form>
+            </div>
+        </div>
+    </div>
+        
+    <footer>
+        <p>Dev.finance$</p>
+    </footer>
+    <script type="text/javascript" src="scripts.js"></script>
+</body>
+
+</html>
